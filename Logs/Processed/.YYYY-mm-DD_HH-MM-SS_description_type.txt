@@ -1,0 +1,13 @@
+CSV files will automatically be saved in this directory.
+
+This is the CSV naming format:
+YYYY - year
+mm - month
+DD - day
+
+HH - hour (24H format)
+MM - minute
+SS - second
+
+description - says whether file contains log data from one month (YYYYmm) or one day (YYYYmmDD)
+type - says whether file contains DOMAIN or LOGIN log data
