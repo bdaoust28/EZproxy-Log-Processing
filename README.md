@@ -1,4 +1,4 @@
-# EZproxy Log Processing
+# EZproxy Log Processor
 ###### by Beau Daoust (2021)
 This project is an ETL pipeline that automatically crawls for, processes, and uploads EZproxy logs to a MySQL database. 
 
