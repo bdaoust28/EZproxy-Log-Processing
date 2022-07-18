@@ -12,6 +12,7 @@ This project is an ETL pipeline that automatically crawls for, processes, and up
 This project can be ran automatically by calling **automation.py** using Task Scheduler (Windows) or Cron (Linux).
 
 *The following information is a modified version of the internal README, provided with permission:*
+## Using this project
 ### Instructions on how to open and run the frontend:
 
 1. Double click 'frontend.py'. If this method does not work, continue to step 2. If a small menu opens with the title "EZproxy Log Processing", you can move on to the next section.
@@ -23,7 +24,6 @@ This project can be ran automatically by calling **automation.py** using Task Sc
 * It is possible there will be different IDLE versions listed. The project's required modules are already installed to work with both IDLE 3.7 and 3.9.
 	* If neither is listed, then the script will likely not run (and likely has not been running), and you should scroll down to the last section of this document titled 'What to do if the project is not working'
 
-## Using this project
 ### Instructions on how to use the frontend:
 
 Once opened, the frontend will present a list of options. Simply type a number between 1-8 and press Enter.
