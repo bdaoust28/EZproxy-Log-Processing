@@ -9,11 +9,16 @@ class Execution():
         try:
             self.settings = json2.load_file(f'{sys.path[0]}/ezproxy/ezproxy/dir_settings.json')  # load dir settings
             creds = json2.load_file(f'{sys.path[0]}/ezproxy/ezproxy/creds.json') # load login creds
-            self.cnx = mysql.connector.connect(user=creds['ms_user'], password=creds['ms_pass'], host=creds['host_ip'], database=creds['host_db'], allow_local_infile=True)
+            self.cnx = mysql.connector.connect(
+                user=creds['ms_user'], 
+                password=creds['ms_pass'], 
+                host=creds['host_ip'], 
+                database=creds['host_db'], 
+                allow_local_infile=True)
         except mysql.connector.Error as err:
             if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
                 print("The submitted user name or password is incorrect. Login credentials have likely been changed.")
-                self.login_fail()
+                log_action('ms_login')
             elif err.errno == errorcode.ER_BAD_DB_ERROR:
                 print("Database does not exist.")
             else:
@@ -24,9 +29,6 @@ class Execution():
 
     def close(self):
         self.cnx.close()
-
-    def login_fail(self):
-        log_action('ms_login')
 
     def select_all(self, table):
         cursor = self.cnx.cursor()
